@@ -595,7 +595,7 @@ function CommentItem({
   const { t } = useTranslation();
   const profile = useContext(ProfileContext);
   const commenterName = comment.user?.username || comment.guestName || t("anonymous");
-  const commenterAvatar = comment.user?.avatar || "/avatar.png";
+  const commenterAvatar = comment.user?.avatar || "https://backend.4km.cc.cd/api/s/CqttOH/%E5%8D%9A%E5%AE%A2%E8%AF%84%E8%AE%BA_%E5%A4%B4%E5%83%8F.png";
   function deleteComment() {
     showConfirm(
       t("delete.comment.title"),
