@@ -160,7 +160,7 @@ export async function runCloudflareDeploy(target: "all" | "server" | "client" = 
   const name = env("NAME", "Rin");
   const description = env("DESCRIPTION", "A lightweight personal blogging system");
   const avatar = env("AVATAR", "");
-  const pageSize = env("PAGE_SIZE", "6");
+  const pageSize = env("PAGE_SIZE", "5");
   const rssEnable = env("RSS_ENABLE", "false");
   const frontendUrl = env("FRONTEND_URL", "");
 
