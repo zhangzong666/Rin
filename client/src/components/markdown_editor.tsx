@@ -1,5 +1,9 @@
-import Editor from '@monaco-editor/react';
+import Editor, { loader } from '@monaco-editor/react';
+import * as monaco from 'monaco-editor';
 import { editor, Range, Selection } from 'monaco-editor';
+import editorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
+//import Editor from '@monaco-editor/react';
+//import { editor, Range, Selection } from 'monaco-editor';
 import React, { useRef, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import Loading from 'react-loading';
@@ -9,6 +13,10 @@ import { useColorMode } from "../utils/darkModeUtils";
 import { buildMarkdownImage, uploadImageFile } from "../utils/image-upload";
 import { Markdown } from "./markdown";
 
+self.MonacoEnvironment = {
+  getWorker: () => new editorWorker(),
+};
+loader.config({ monaco });
 
 interface MarkdownEditorProps {
   content: string;
